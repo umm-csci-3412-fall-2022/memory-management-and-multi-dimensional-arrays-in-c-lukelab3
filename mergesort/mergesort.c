@@ -7,7 +7,7 @@ void partition(int first, int last, int values[]){
 		int mid = (first + last)/2;
 		partition(first, mid, values);
 		partition(mid, last, values);
-		joinArray(int first, int mid, int last, int values[]);
+		joinArray(first, mid, last, values[]);
 	}
 }
 
