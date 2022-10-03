@@ -11,7 +11,7 @@ void partition(int first, int last, int values[]){
 	}
 }
 
-void joinArray(int first, int mid, int last, int values[]){
+void joinArray(first, mid, last, values[]){
 	int sorted[last - first];
 	int sortIndex = 0;
 	int firstIndex = first;
