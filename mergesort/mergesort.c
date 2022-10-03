@@ -1,5 +1,9 @@
 #include "mergesort.h"
 
+int noOverflow(int a, int b){
+	return a/2 + b/2 + (a%2 + b%2)/2;
+}
+
 void joinArray(int first, int mid, int last, int values[]){
 	int sorted[last - first];
 	int sortIndex = 0;
@@ -41,7 +45,7 @@ void partition(int first, int last, int values[]){
 		return;
 	}
 	else{
-		int mid = (first + last)/2;
+		int mid = noOverflow(first,last);
 		partition(first, mid, values);
 		partition(mid, last, values);
 		joinArray(first, mid, last, values);
