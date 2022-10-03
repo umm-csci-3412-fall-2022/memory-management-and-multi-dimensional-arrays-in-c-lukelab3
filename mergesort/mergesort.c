@@ -1,5 +1,5 @@
 #include "mergesort.h"
-void partition(first, last, values[]){
+void partition(int first, int last, int values[]){
 	if (last - first <= 1){
 		return;
 	}
@@ -11,7 +11,7 @@ void partition(first, last, values[]){
 	}
 }
 
-void joinArray(first, mid, last, values[]){
+void joinArray(int first, int mid, int last, int values[]){
 	int sorted[last - first];
 	int sortIndex = 0;
 	int firstIndex = first;
@@ -47,6 +47,6 @@ void joinArray(first, mid, last, values[]){
 	}
 }
 
-void mergesort(size, values[]) {
+void mergesort(int size, int values[]) {
   partition(0, size, values);
 }
