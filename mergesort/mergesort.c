@@ -1,12 +1,53 @@
 #include "mergesort.h"
 
 void mergesort(int size, int values[]) {
-  // This obviously doesn't actually do any *sorting*, so there's
-  // certainly work still to be done.
-  //
-  // Remember that a key goal here is to learn to use
-  // `malloc/calloc` and `free`, so make sure you explicitly
-  // allocate any new arrays that you need, even if you
-  // might not strictly need to.
-  return;
+  partition(0, size, values);
+}
+
+void partition(int first, int last, int values[]){
+	if (last - first <= 1){
+		return;
+	}
+	else{
+		int mid = (first + last)/2;
+		partition(first, mid, values);
+		partition(mid, last, values);
+		joinArray(int first, int mid, int last, int values[]);
+	}
+}
+
+void joinArray(int first, int mid, int last, int values[]){
+	int sorted[last - first];
+	int sortIndex = 0;
+	int firstIndex = first;
+	int secondIndex = mid;
+
+	while(firstIndex < mid && secondIndex < last){
+		if(values[firstIndex] < values[secondIndex]){
+			sorted[sortIndex] = values[firstIndex];
+			firstIndex++;
+			sortIndex++;
+		}
+		else{
+			sorted[sortIndex] = values[secondIndex];
+			secondIndex++;
+			sortIndex++;
+		}
+	}
+
+	while(firstIndex < mid){
+		sorted[sortIndex] = values[firstIndex];
+		firstIndex++;
+		sortIndex++;
+	}
+
+	while(secondIndex < last){
+		sorted[sortIndex] = values[secondIndex];
+		secondIndex++;
+		sortIndex++;
+	}
+
+	for(int x = 0; x < end - start; x++){
+		values[x + start] = sorted[x];
+	}
 }
