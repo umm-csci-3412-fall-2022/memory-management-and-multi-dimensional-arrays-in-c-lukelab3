@@ -42,8 +42,8 @@ void joinArray(int first, int mid, int last, int values[]){
 		sortIndex++;
 	}
 
-	for(int x = 0; x < end - start; x++){
-		values[x + start] = sorted[x];
+	for(int x = 0; x < last - first; x++){
+		values[x + first] = sorted[x];
 	}
 }
 
