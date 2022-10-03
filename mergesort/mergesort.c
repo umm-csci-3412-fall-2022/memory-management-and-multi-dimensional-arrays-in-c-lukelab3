@@ -1,9 +1,4 @@
 #include "mergesort.h"
-
-void mergesort(int size, int values[]) {
-  partition(0, size, values);
-}
-
 void partition(int first, int last, int values[]){
 	if (last - first <= 1){
 		return;
@@ -50,4 +45,8 @@ void joinArray(int first, int mid, int last, int values[]){
 	for(int x = 0; x < end - start; x++){
 		values[x + start] = sorted[x];
 	}
+}
+
+void mergesort(int size, int values[]) {
+  partition(0, size, values);
 }
