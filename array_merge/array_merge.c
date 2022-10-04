@@ -16,7 +16,7 @@ int* combineArrays(int num_arrays, int* sizes, int** values){
 	int index = 0;
 
 	for(int x = 0; x < num_arrays; x++){
-		for(int y = 0; y < sizes[x]; x++){
+		for(int y = 0; y < sizes[x]; y++){
 			completeArray[index] = values[x][y];
 			index++;
 		}
